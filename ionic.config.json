@@ -1,0 +1,7 @@
+{
+  "name": "mestra-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
