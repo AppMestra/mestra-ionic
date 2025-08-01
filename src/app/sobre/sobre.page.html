@@ -1,0 +1,92 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="mestra-primary">
+    <ion-title>
+      <img src="assets/logo.png" alt="Mestra Logo" class="logo">
+      Sobre
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="mestra-bg">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header mestra-primary">
+            <h5 class="card-title mb-0 text-white">
+              <ion-icon name="information-circle" class="me-2"></ion-icon>
+              Sobre o Mestra
+            </h5>
+          </div>
+          <div class="card-body">
+            <div class="text-center mb-4">
+              <img src="assets/logo.png" alt="Mestra Logo" style="max-width: 120px;">
+            </div>
+            
+            <h6 class="text-muted">Informações do Projeto</h6>
+            <p class="card-text">
+              O Mestra é uma aplicação completa que integra diferentes tecnologias para 
+              fornecer uma solução robusta de comunicação e processamento de dados.
+            </p>
+
+            <h6 class="text-muted mt-4">Tecnologias Utilizadas</h6>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <ion-icon name="logo-angular" class="me-2" style="color: #dd0031;"></ion-icon>
+                    <strong>Frontend:</strong> Ionic + Angular
+                  </li>
+                  <li class="list-group-item">
+                    <ion-icon name="server" class="me-2" style="color: #00add8;"></ion-icon>
+                    <strong>Backend:</strong> API Golang
+                  </li>
+                  <li class="list-group-item">
+                    <ion-icon name="logo-nodejs" class="me-2" style="color: #339933;"></ion-icon>
+                    <strong>Bot:</strong> Node.js + Venom
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <ion-icon name="desktop" class="me-2" style="color: #083554;"></ion-icon>
+                    <strong>UI:</strong> Bootstrap + Ionic
+                  </li>
+                  <li class="list-group-item">
+                    <ion-icon name="chatbubbles" class="me-2" style="color: #25d366;"></ion-icon>
+                    <strong>WhatsApp:</strong> Integração
+                  </li>
+                  <li class="list-group-item">
+                    <ion-icon name="database" class="me-2" style="color: #336791;"></ion-icon>
+                    <strong>Banco:</strong> PostgreSQL/MySQL
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h6 class="text-muted mt-4">Funcionalidades</h6>
+            <div class="card">
+              <div class="card-body">
+                <ul class="mb-0">
+                  <li>Processamento de mensagens em tempo real</li>
+                  <li>Integração com WhatsApp via Venom Bot</li>
+                  <li>API REST para comunicação entre serviços</li>
+                  <li>Interface responsiva e moderna</li>
+                  <li>Gerenciamento de entradas e mensagens</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <p class="text-muted small">
+                <ion-icon name="calendar" class="me-2"></ion-icon>
+                Versão 1.0 - {{ currentYear }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
