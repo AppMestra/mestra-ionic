@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class Tab3Page {
+  currentYear = new Date().getFullYear();
 
   constructor() {}
-
 }

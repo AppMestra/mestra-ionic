@@ -1,17 +1,92 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="mestra-primary">
     <ion-title>
-      Tab 2
+      <img src="assets/logo.png" alt="Mestra Logo" class="logo">
+      ApiGo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="mestra-bg">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header mestra-primary">
+            <h5 class="card-title mb-0 text-white">
+              <ion-icon name="server" class="me-2"></ion-icon>
+              Dados da API Golang
+            </h5>
+          </div>
+          <div class="card-body">
+            <div *ngIf="loading" class="text-center">
+              <div class="spinner-border" style="color: #083554;" role="status">
+                <span class="visually-hidden">Carregando...</span>
+              </div>
+              <p class="mt-2">Carregando dados...</p>
+            </div>
+            
+            <div *ngIf="error" class="alert alert-danger">
+              <ion-icon name="alert-circle" class="me-2"></ion-icon>
+              {{ error }}
+            </div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+            <div *ngIf="apiData && !loading">
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h6 class="card-subtitle mb-2 text-muted">Status da API</h6>
+                      <p class="card-text">{{ apiData.message }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 mb-3" *ngIf="mensagens && mensagens.length > 0">
+                  <div class="card">
+                    <div class="card-body">
+                      <h6 class="card-subtitle mb-2 text-muted">Mensagens ({{ mensagens.length }})</h6>
+                      <div class="list-group">
+                        <div *ngFor="let mensagem of mensagens" class="list-group-item">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">ID: {{ mensagem.id }}</h6>
+                            <small>{{ mensagem.created_at | date:'short' }}</small>
+                          </div>
+                          <p class="mb-1">{{ mensagem.conteudo }}</p>
+                          <small>Status: {{ mensagem.status }}</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 mb-3" *ngIf="entradas && entradas.length > 0">
+                  <div class="card">
+                    <div class="card-body">
+                      <h6 class="card-subtitle mb-2 text-muted">Entradas ({{ entradas.length }})</h6>
+                      <div class="list-group">
+                        <div *ngFor="let entrada of entradas" class="list-group-item">
+                          <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">ID: {{ entrada.id }}</h6>
+                            <small>{{ entrada.created_at | date:'short' }}</small>
+                          </div>
+                          <p class="mb-1">{{ entrada.numero }}</p>
+                          <small>Tipo: {{ entrada.tipo }}</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn mestra-primary mt-3" (click)="refreshData()">
+                <ion-icon name="refresh" class="me-2"></ion-icon>
+                Atualizar Dados
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

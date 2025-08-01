@@ -1,17 +1,47 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="mestra-primary">
     <ion-title>
-      Tab 1
+      <img src="assets/logo.png" alt="Mestra Logo" class="logo">
+      Início
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content [fullscreen]="true" class="mestra-bg">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header mestra-primary">
+            <h5 class="card-title mb-0 text-white">
+              <ion-icon name="home" class="me-2"></ion-icon>
+              Bem-vindo ao Mestra
+            </h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Esta é a aplicação Mestra que conecta com a API Golang.
+            </p>
+            <p class="card-text">
+              Use as abas abaixo para navegar entre as diferentes seções:
+            </p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <ion-icon name="home" class="me-2" style="color: #083554;"></ion-icon>
+                <strong>Início:</strong> Página principal da aplicação
+              </li>
+              <li class="list-group-item">
+                <ion-icon name="server" class="me-2" style="color: #083554;"></ion-icon>
+                <strong>ApiGo:</strong> Dados da API Golang
+              </li>
+              <li class="list-group-item">
+                <ion-icon name="information-circle" class="me-2" style="color: #083554;"></ion-icon>
+                <strong>Sobre:</strong> Informações sobre o projeto
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

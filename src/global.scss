@@ -9,6 +9,9 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+/* Bootstrap CSS */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -33,5 +36,41 @@
  */
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
+
+/* Custom Mestra Styles */
+:root {
+  --mestra-primary: #083554;
+  --mestra-background: #ffffff;
+}
+
+.mestra-primary {
+  background-color: var(--mestra-primary) !important;
+  color: white !important;
+}
+
+.mestra-bg {
+  background-color: var(--mestra-background) !important;
+}
+
+ion-tab-bar {
+  --background: var(--mestra-primary);
+  --color: rgba(255, 255, 255, 0.7);
+  --color-selected: white;
+}
+
+ion-header {
+  --background: var(--mestra-primary);
+  --color: white;
+}
+
+ion-toolbar {
+  --background: var(--mestra-primary);
+  --color: white;
+}
+
+.logo {
+  max-height: 40px;
+  margin-right: 10px;
+}
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
